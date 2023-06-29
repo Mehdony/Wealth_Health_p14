@@ -1,11 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Routing from "./Routes/Routing";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* nav */}
+      <Nav />
       <Routing />
       {/* footer */}
     </BrowserRouter>
