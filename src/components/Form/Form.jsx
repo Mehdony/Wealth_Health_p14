@@ -1,10 +1,29 @@
+import { useContext } from "react";
 import styles from "./Form.module.css";
+import { usersListContext } from "../../Context/userContext";
+import * as states from "../../../states.json";
 
 const Form = () => {
+  // on récupère la liste des employés et la fonction pour la modifier
+  const { usersList, setUsersList } = useContext(usersListContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // on créé un objet à partir des données du formulaire
+    const formData = new FormData(e.target);
+    const newEmployee = Object.fromEntries(formData.entries());
+    // on ajoute l'objet à la liste des employés
+    setUsersList([...usersList, newEmployee]);
+    console.log("envoyé");
+    // on vide le formulaire
+    e.target.reset();
+  };
+
   return (
     <div>
       <h2>Create Employee</h2>
-      <form action="POST">
+      {/* fonction callback  */}
+      <form onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.userInfos}>
           <div className={styles.imputGroup}>
             <label htmlFor="firstName">First Name</label>
@@ -46,7 +65,13 @@ const Form = () => {
             <label htmlFor="state">State</label>
             {/* option select usa states */}
             <select name="state" id="state">
-              <option value="state">State</option>
+              {states.default.map((state) => {
+                return (
+                  <option key={state.abbreviation} value={state.abbreviation}>
+                    {state.name}
+                  </option>
+                );
+              })}
             </select>
           </div>
 
@@ -66,10 +91,10 @@ const Form = () => {
               <option>Legal</option>
             </select>
           </div>
+
+          <button type="submit">Save</button>
         </div>
       </form>
-
-      <button>Save</button>
     </div>
   );
 };
