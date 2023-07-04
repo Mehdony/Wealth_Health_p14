@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styles from "./Form.module.css";
 import { usersListContext } from "../../Context/userContext";
 import * as states from "../../../states.json";
+import Modal from "modalite_react";
 
 const Form = () => {
   // on récupère la liste des employés et la fonction pour la modifier
   const { usersList, setUsersList } = useContext(usersListContext);
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +17,11 @@ const Form = () => {
     // on ajoute l'objet à la liste des employés
     setUsersList([...usersList, newEmployee]);
     console.log("envoyé");
+    // on ouvre la modal
+    setSent(true);
+    setTimeout(() => {
+      setSent(false);
+    }, 2000);
     // on vide le formulaire
     e.target.reset();
   };
@@ -95,6 +102,7 @@ const Form = () => {
           <button type="submit">Save</button>
         </div>
       </form>
+      {sent ? <Modal message="Employee added" timeDuration={2000} /> : null}
     </div>
   );
 };
