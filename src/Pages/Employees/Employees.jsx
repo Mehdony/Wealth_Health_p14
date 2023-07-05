@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import styles from './Employees.module.css'
+// import styles from './Employees.module.css'
 import { Datablify } from 'datablify'
 import { usersListContext } from "../../Context/userContext";
 
@@ -23,6 +23,7 @@ const Employees = () => {
 
   return (
     <div>
+      {/* on passe la liste des employés et les catégories à datablify */}
       <Datablify
       data={usersList}
       categories={categories}
