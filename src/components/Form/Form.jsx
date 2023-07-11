@@ -102,7 +102,13 @@ const Form = () => {
           <button type="submit">Save</button>
         </div>
       </form>
-      {sent ? <Modal message="Employee added" timeDuration={2000} /> : null}
+
+      {sent ? (
+        <div className={styles.modalContainer}>
+          {" "}
+          <Modal message="Employee added with success" timeDuration={2000} />
+        </div>
+      ) : null}
     </div>
   );
 };
