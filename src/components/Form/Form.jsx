@@ -19,9 +19,9 @@ const Form = () => {
     console.log("envoyé");
     // on ouvre la modal
     setSent(true);
-    setTimeout(() => {
-      setSent(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   setSent(false);
+    // }, 2000);
     // on vide le formulaire
     e.target.reset();
   };
@@ -106,7 +106,7 @@ const Form = () => {
       {sent ? (
         <div className={styles.modalContainer}>
           {" "}
-          <Modal message="Employee added with success" timeDuration={2000} />
+          <Modal message="Employee added with success" setSent={setSent}/>
         </div>
       ) : null}
     </div>
