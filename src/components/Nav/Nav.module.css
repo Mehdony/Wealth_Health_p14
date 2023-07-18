@@ -6,14 +6,14 @@
 
 .header{
     background-color: #283728;
-    height: 220px;
+    height: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .logoContainer{
-  width: 220px;
+  width: 200px;
   height: 100%;
   display: flex;
   flex-direction: column;

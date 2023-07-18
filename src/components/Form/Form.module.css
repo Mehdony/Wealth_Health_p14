@@ -1,14 +1,85 @@
-.modalContainer{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: modalContainer 0.5s ease-in-out;
+}
+
+.formContainer {
+    border: 1px solid black;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    animation: modalContainer 0.5s ease-in-out;
+    padding: 15px;
+    width: 330px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 100%;
+}
+
+.userInfos {
+    width: 100%;
+}
+
+.userInfos, .userAddress {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 100%;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.input {
+    width: 100%;
+    /* height: 30px; */
+    padding: 5px;
+    font-size: 13px;
+}
+
+
+.button {
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #283728 ;
+/* smooth transition */
+    transition: opacity 0.150s ease-in-out;
+}
+
+.button:hover {
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.85;
+    color: rgb(255, 255, 255);
 }

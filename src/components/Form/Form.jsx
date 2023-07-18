@@ -27,51 +27,51 @@ const Form = () => {
   };
 
   return (
-    <div>
-      <h2>Create Employee</h2>
+    <div className={styles.formContainer} >
+      <h2 className={styles.title}>Create Employee</h2>
       {/* fonction callback  */}
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
         <div className={styles.userInfos}>
-          <div className={styles.imputGroup}>
-            <label htmlFor="firstName">First Name</label>
-            <input type="text" name="firstName" id="firstName" />
+          <div className={styles.inputGroup}>
+            <label className={styles.label} htmlFor="firstName">First Name</label>
+            <input required  className={styles.input} type="text" name="firstName" id="firstName" />
           </div>
 
-          <div className={styles.imputGroup}>
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" name="lastName" id="lastName" />
+          <div className={styles.inputGroup}>
+            <label className={styles.label} htmlFor="lastName">Last Name</label>
+            <input  required  className={styles.input} type="text" name="lastName" id="lastName" />
           </div>
 
-          <div className={styles.imputGroup}>
+          <div className={styles.inputGroup}>
             {/* birth date */}
-            <label htmlFor="birthDate">Birth Date</label>
-            <input type="date" name="birthDate" id="birthDate" />
+            <label className={styles.label} htmlFor="birthDate">Birth Date</label>
+            <input  required  className={styles.input} type="date" name="birthDate" id="birthDate" />
           </div>
 
-          <div className={styles.imputGroup}>
+          <div className={styles.inputGroup}>
             {/* startDate */}
-            <label htmlFor="startDate">Start Date</label>
-            <input type="date" name="startDate" id="startDate" />
+            <label className={styles.label} htmlFor="startDate">Start Date</label>
+            <input  required  className={styles.input} type="date" name="startDate" id="startDate" />
           </div>
         </div>
         <div className={styles.userAddress}>
-          <div className={styles.imputGroup}>
+          <div className={styles.inputGroup}>
             {/* street */}
-            <label htmlFor="street">Street</label>
-            <input type="text" name="street" id="street" />
+            <label className={styles.label} htmlFor="street">Street</label>
+            <input  required  className={styles.input} type="text" name="street" id="street" />
           </div>
 
-          <div className={styles.imputGroup}>
+          <div className={styles.inputGroup}>
             {/* city */}
-            <label htmlFor="city">City</label>
-            <input type="text" name="city" id="city" />
+            <label className={styles.label} htmlFor="city">City</label>
+            <input  required  className={styles.input} type="text" name="city" id="city" />
           </div>
 
-          <div className={styles.imputGroup}>
+          <div className={styles.inputGroup}>
             {/* state */}
-            <label htmlFor="state">State</label>
+            <label className={styles.label} htmlFor="state">State</label>
             {/* option select usa states */}
-            <select name="state" id="state">
+            <select  className={styles.input} name="state" id="state">
               {states.default.map((state) => {
                 return (
                   <option key={state.abbreviation} value={state.abbreviation}>
@@ -82,15 +82,15 @@ const Form = () => {
             </select>
           </div>
 
-          <div className={styles.imputGroup}>
+          <div className={styles.inputGroup}>
             {/* zip code */}
-            <label htmlFor="zipCode">Zip Code</label>
-            <input type="text" name="zipCode" id="zipCode" />
+            <label className={styles.label} htmlFor="zipCode">Zip Code</label>
+            <input  required  className={styles.input} type="text" name="zipCode" id="zipCode" />
           </div>
 
-          <div className={styles.imputGroup}>
-            <label htmlFor="department">Department</label>
-            <select name="department" id="department">
+          <div className={styles.inputGroup}>
+            <label className={styles.label} htmlFor="department">Department</label>
+            <select  className={styles.input}  name="department" id="department">
               <option>Sales</option>
               <option>Marketing</option>
               <option>Engineering</option>
@@ -99,7 +99,7 @@ const Form = () => {
             </select>
           </div>
 
-          <button type="submit">Save</button>
+          <button className={styles.button} type="submit">Save</button>
         </div>
       </form>
 
