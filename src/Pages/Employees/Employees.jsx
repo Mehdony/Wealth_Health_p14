@@ -5,8 +5,8 @@ import { usersListContext } from "../../Context/userContext";
 import styles from './Employees.module.css'
 
 const Employees = () => {
-
-  // on récupère la liste des employés du contexte
+ 
+  // on récupèr la liste des employés du contexte
   const { usersList } = useContext(usersListContext);
 
   // on crée les catégories pour datablify
