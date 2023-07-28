@@ -16,12 +16,8 @@ const Form = () => {
     const newEmployee = Object.fromEntries(formData.entries());
     // on ajoute l'objet à la liste des employés
     setUsersList([...usersList, newEmployee]);
-    console.log("envoyé");
     // on ouvre la modal
     setSent(true);
-    // setTimeout(() => {
-    //   setSent(false);
-    // }, 2000);
     // on vide le formulaire
     e.target.reset();
   };
